@@ -1,0 +1,145 @@
+#err {
+    background-color: black;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    text-align: center;
+    background-color: yellow;
+    color:white;
+}
+
+h1 {
+    color: yellow;
+}
+
+.main {
+    background-color: black;
+    width: 100vw;
+
+}
+
+#index {
+    font-size: xx-large;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+header {
+    background-color: navy;
+    display: flex;
+    height: 30vh;
+    justify-content: space-between;
+    color:  lime ;
+    font-family:cursive;
+    line-height: 170%;
+}
+
+
+input[type=submit] {
+    width: 15vw;  height: 5vh;
+    background-color: gold;
+}
+
+#votepage {
+    font-size: x-large;
+
+}
+
+#contest {
+    display: grid;
+    font-size: 120%;
+    grid-template-columns: repeat(4, 22vw);
+    grid-row-gap: 3vh;
+    grid-column-gap: 2vw;
+
+}
+
+
+.tick {
+    background-color:white;
+    color: black;
+    border-width: 5px;
+    border-color: blue;
+    border-style: solid;
+}
+
+#result {
+    font-size: xx-large;
+}
+#demo {
+    font-size: xxx-large;
+}
+
+footer {
+    font-size: 175%;
+    color: black;
+}
+
+#chill {
+    width: 40vw;
+    height: 55vw;
+}
+
+@media (max-width: 800px) {
+
+#contest {
+    display: grid;
+    font-size: 50%;
+    grid-template-columns: repeat(3, 30vw);
+    grid-row-gap: 3vh;
+    grid-column-gap: 2vw;
+
+}
+
+.tick {
+    background-color:white;
+    color: black;
+    border-width: 3px;
+    border-color: blue;
+    border-style: solid;
+}
+}
+
+#construction {
+    font-size: xx-large
+}
+
+#contest2 {
+    display: grid;
+    font-size: 120%;
+    grid-template-columns: repeat(3, 30vw);
+    grid-row-gap: 3vh;
+    grid-column-gap: 2vw;
+
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  background-color: blue;
+}
+
+.tabname{
+    font-size: xx-large;
+    color: gold;
+}
+
