@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="main" id="index">
+        <form action="/" method="POST">
+            <label for='name'>Select your name: </label>
+            <select id="name" name="voter_name">
+                <option disabled selected value="">Your Name</option>
+                {% for v in range(n) %}
+                    <option value='{{ voters[v] }}'>{{ voters[v] }}</option>
+                {% endfor %}
+            </select>
+            <input type=submit>
+        </form>
+    </div>
+
+
+
+{% endblock %}

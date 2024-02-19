@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Errorpage
+{% endblock %}
+
+{% block body %}
+    <div id="err">
+            <h1>ERROR</h1>
+            <p style="font-size: large">{{ error_msg }}</p>
+            <a href="/"><button style="background-color: yellow;" type="button"><b>Go HOME</b></button></a>
+    </div>
+
+    <img src="/static/gp-muthu.gif">
+
+{% endblock %}

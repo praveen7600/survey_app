@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    ONLINE SUBJECT
+{% endblock %}
+
+{% block body %}
+    <div class="main" id="result">
+      ONE SUBJECT THAT YOU WOULD LIKE TO WRITE ONLINE
+      </div>
+    <div class="main" id="votepage">
+    <form action="/q6OnSub" method="POST">
+        <fieldset>
+            <legend>You can only select one subject.</p></legend>
+                <div id="contest2">
+                    {% for i in range(0,n) %}
+                        <label class="tick"><input type="checkbox" name="voted_for" value="{{ c[i] }}" onclick="return ValidateVoting();">{{ c[i] }}</label>
+                    {% endfor %}
+                    <br><br>
+                </div>
+                <input type="submit" value="VOTE" onclick="return ValidateSubmit();">
+        </fieldset>
+    </form>
+    </div>
+
+    <script type="text/javascript">
+        var numberOfCheckedItems = 0;
+        function ValidateVoting()
+        {
+            var checkboxes = document.getElementsByName("voted_for");
+            //console.log(checkboxes.length-6);
+            numberOfCheckedItems = 0;
+            for(var i = 0; i < checkboxes.length; i++)
+            {
+                if(checkboxes[i].checked)
+                    numberOfCheckedItems++;
+            }
+            if(numberOfCheckedItems > 1)
+            {
+                alert("You can't vote for more than 1 subject!!!");
+                return false;
+            }
+            else if (numberOfCheckedItems == 1)
+            {
+                alert("Remaining votes: 0");
+            }
+        }
+
+        function ValidateSubmit()
+        {
+            console.log(numberOfCheckedItems)
+            if (numberOfCheckedItems < 1)
+            {
+                alert("VOTE for 1 subject!");
+                return false;
+            }
+        }
+    </script>
+
+
+{% endblock %}

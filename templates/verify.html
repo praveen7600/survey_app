@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    VERIFY
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="main" id="index">
+        <p>Password has been sent to your mail-id.</p>
+        <form action="/verify" method="POST">
+            <label><input type="text" placeholder="PASSWORD" name="pw" required></label>
+            <input type=submit>
+        </form>
+    </div>
+
+
+
+{% endblock %}

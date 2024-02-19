@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Result
+
+{% endblock %}
+
+{% block body %}
+    <div class="main" id="result">
+        RESULT
+    </div>
+
+    <br><br><br>
+
+    <div class="main">
+        <table>
+        <b class="tabname">GATE CLASS</b>
+          <tr>
+            <th>Rank</th>
+            <th>NEED</th>
+            <th>Votes</th>
+          </tr>
+          {% for i in range(2) %}
+              <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ sub[i]['val'] }}</td>
+                <td>{{ sub[i]['count'] }}</td>
+              </tr>
+          {% endfor %}
+
+        </table>
+    </div>
+
+    <br><br>
+
+    <div class="main">
+        <table>
+        <b class="tabname">CLASS ENTERTAINERS</b>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Votes</th>
+          </tr>
+          {% for i in range(5) %}
+              <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ ent[i]['name'] }}</td>
+                <td>{{ ent[i]['count'] }}</td>
+              </tr>
+          {% endfor %}
+
+        </table>
+    </div>
+
+    <br><br>
+
+    <div class="main">
+        <table>
+        <b class="tabname">DREAM CLASS REP(BOY)</b>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Votes</th>
+          </tr>
+          {% for i in range(3) %}
+              <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ rb[i]['name'] }}</td>
+                <td>{{ rb[i]['count'] }}</td>
+              </tr>
+          {% endfor %}
+
+        </table>
+    </div>
+
+        <br><br>
+
+    <div class="main">
+        <table>
+        <b class="tabname">DREAM CLASS REP(GIRL)</b>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Votes</th>
+          </tr>
+          {% for i in range(3) %}
+              <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ rg[i]['name'] }}</td>
+                <td>{{ rg[i]['count'] }}</td>
+              </tr>
+          {% endfor %}
+
+        </table>
+    </div>
+
+    <br><br>
+
+    <div class="main">
+        <table>
+        <b class="tabname">FAVOURITE SEMINARE</b>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Votes</th>
+          </tr>
+          {% for i in range(5) %}
+              <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ sem[i]['name'] }}</td>
+                <td>{{ sem[i]['count'] }}</td>
+              </tr>
+          {% endfor %}
+
+        </table>
+    </div>
+
+    <br><br>
+
+    <div class="main">
+        <table>
+        <b class="tabname">MOST FEARED SUBJECT</b>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Votes</th>
+          </tr>
+          {% for i in range(6) %}
+              <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ sub[i]['name'] }}</td>
+                <td>{{ sub[i]['count'] }}</td>
+              </tr>
+          {% endfor %}
+
+        </table>
+    </div>
+
+{% endblock %}

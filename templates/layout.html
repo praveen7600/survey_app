@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <link href="/static/rstyles.css" rel="stylesheet">
+
+        {% if rep %}
+        <link rel="stylesheet" type="text/css" href="/static/style.css"/>
+        {% endif %}
+
+        <link href="/static/vote.jfif" rel="icon">
+
+
+    </head>
+    {% if result %}
+    <body onload="startTime()">
+    {% else %}
+    <body>
+    {% endif %}
+        <header>
+            <img src="/static/clg_entrance.jpg" width="30%">
+            <div>
+                <h1> A4 CLASS SURVEY </h1>
+                <h2> CSE SECOND YEAR </h2>
+                <h3> GCE-TLY </h3>
+            </div>
+            <img src="/static/clg_cs_build.jpg" width="30%">
+        </header>
+
+        <br><br>
+
+        {% block body %}{% endblock %}
+    </body>
+</html>

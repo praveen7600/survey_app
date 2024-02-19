@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    MCQ
+{% endblock %}
+
+{% block body %}
+    <div class="main" id="result">
+    MCQ
+    </div>
+    <div class="main" id="votepage">
+    <form action="/q5mcq" method="POST">
+        <fieldset>
+            <legend><p>Do your REALLY need GATE class from next SEM?</p></p></legend>
+                <div id="contest2">
+                        <label class="tick"><input type="checkbox" name="voted_for" value="yes" onclick="return ValidateVoting();">YES</label>
+                        <label class="tick"><input type="checkbox" name="voted_for" value="no" onclick="return ValidateVoting();">NO</label>
+
+                </div>
+                <br><br><br>
+            <legend id='construction'>SORRY! UNDER CONSTRUCTION</legend>
+
+                <input type="submit" value="NEXT" onclick="return ValidateSubmit();">
+        </fieldset>
+    </form>
+    </div>
+     <script type="text/javascript">
+        var numberOfCheckedItems = 0;
+        function ValidateVoting()
+        {
+            var checkboxes = document.getElementsByName("voted_for");
+            //console.log(checkboxes.length-6);
+            numberOfCheckedItems = 0;
+            for(var i = 0; i < checkboxes.length; i++)
+            {
+                if(checkboxes[i].checked)
+                    numberOfCheckedItems++;
+            }
+            if(numberOfCheckedItems > 1)
+            {
+                alert("You can't vote for more than 1 subject!!!");
+                return false;
+            }
+        }
+
+        function ValidateSubmit()
+        {
+            console.log(numberOfCheckedItems)
+            if (numberOfCheckedItems < 1)
+            {
+                alert("SELECT 1 option!");
+                return false;
+            }
+        }
+    </script>
+
+{% endblock %}

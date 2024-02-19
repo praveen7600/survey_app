@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block body %}
+  <div class="main" id="result">
+      You've voted. Thanks for participating!
+      <br>
+      <b>Result in : </b>
+      <div id="demo"></div>
+  </div>
+
+  <footer>
+    <p>Until then, go chill out.</p>
+    <a href="https://www.youtube.com/watch?v=9VpeTiz81gc"><img id="chill" src="/static/vikram.jpg"></button></a>
+  </footer>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("JUNE 10, 2022 11:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Processing...";
+  }
+}, 1000);
+</script>
+
+
+{% endblock %}

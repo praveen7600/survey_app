@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Class Entertainer
+{% endblock %}
+
+{% block body %}
+    <div class="main" id="result">
+      CLASS ENTERTAINER
+      </div>
+    <div class="main" id="votepage">
+    <form action="/q1enter" method="POST">
+        <fieldset>
+            <legend>You have 3 votes in total. You can only put one vote for a contestant.</p></legend>
+                <div id="contest">
+                    {% for i in range(1,n) %}
+                        <label class="tick"><input type="checkbox" name="voted_for" value="{{ c[i] }}" onclick="return ValidateVoting();">{{ c[i] }}</label>
+                    {% endfor %}
+                    <br><br>
+                </div>
+                <input type="submit" value="VOTE" onclick="return ValidateSubmit();">
+        </fieldset>
+    </form>
+    </div>
+
+    <script type="text/javascript">
+        var numberOfCheckedItems = 0;
+        function ValidateVoting()
+        {
+            var checkboxes = document.getElementsByName("voted_for");
+            console.log(checkboxes.length-6);
+            numberOfCheckedItems = 0;
+            for(var i = 0; i < checkboxes.length; i++)
+            {
+                if(checkboxes[i].checked)
+                    numberOfCheckedItems++;
+            }
+            if(numberOfCheckedItems > 3)
+            {
+                alert("You can't vote for more than 3 contestants!!!");
+                return false;
+            }
+            else if (numberOfCheckedItems == 3)
+            {
+                alert("Remaining votes: 0");
+            }
+        }
+
+        function ValidateSubmit()
+        {
+            console.log(numberOfCheckedItems)
+            if (numberOfCheckedItems < 3)
+            {
+                alert("VOTE for 3 contestants!");
+                return false;
+            }
+        }
+    </script>
+
+
+{% endblock %}
